@@ -6,12 +6,10 @@ import java.util.*;
 
 public class MoviesStore {
     private final Map<Integer, Movie> storage = new HashMap<>();
-    private static int id = 1;
 
     public void addMovie(Movie movie) {
-        Movie stored = new Movie(id, movie.getTitle(), movie.getDirector(), movie.getYear());
+        Movie stored = new Movie(movie.getId(), movie.getTitle(), movie.getDirector(), movie.getYear());
         storage.put(stored.getId(), stored);
-        id++;
     }
 
     public void clearStorage() {
