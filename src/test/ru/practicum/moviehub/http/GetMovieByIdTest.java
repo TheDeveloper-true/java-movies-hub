@@ -13,8 +13,8 @@ import java.nio.charset.StandardCharsets;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GetMovieByIdTest extends TestUtils {
-    private static Movie firstFilm;
-    private static Movie secondFilm;
+    private Movie firstFilm;
+    private Movie secondFilm;
 
     @BeforeEach
     void beforeEach() {

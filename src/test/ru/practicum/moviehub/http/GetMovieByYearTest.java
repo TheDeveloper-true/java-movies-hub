@@ -14,8 +14,8 @@ import java.util.Collection;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GetMovieByYearTest extends TestUtils {
-    private static Movie firstFilm;
-    private static Movie secondFilm;
+    private Movie firstFilm;
+    private Movie secondFilm;
 
     @BeforeEach
     void beforeEach() {

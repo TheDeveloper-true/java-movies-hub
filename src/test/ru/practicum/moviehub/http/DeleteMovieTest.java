@@ -13,13 +13,11 @@ import java.nio.charset.StandardCharsets;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DeleteMovieTest extends TestUtils {
-    private static Movie firstFilm;
-    private static Movie secondFilm;
 
     @BeforeEach
     void beforeEach() {
-        firstFilm = new Movie(1, "Film", "Director", 2000);
-        secondFilm = new Movie(2, "Film", "Director", 2000);
+        Movie firstFilm = new Movie(1, "Film", "Director", 2000);
+        Movie secondFilm = new Movie(2, "Film", "Director", 2000);
         store.addMovie(firstFilm);
         store.addMovie(secondFilm);
     }
@@ -57,7 +55,7 @@ public class DeleteMovieTest extends TestUtils {
     }
 
     @Test
-    void deleteMovies_whenIdIsNotFound_return404() throws Exception {
+    void deleteMovies_whenIdIsNotFound_return404Code() throws Exception {
 
         HttpRequest req = HttpRequest.newBuilder()
                 .uri(URI.create(BASE + "/movies/14"))

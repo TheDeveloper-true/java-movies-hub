@@ -9,16 +9,17 @@ import ru.practicum.moviehub.store.MoviesStore;
 import java.net.http.HttpClient;
 
 public class TestUtils {
-    protected static final String BASE = "http://localhost:8080"; // !!! добавьте базовую часть URL
+    protected static final String BASE = "http://localhost:8080"; //
     protected static MoviesServer server;
     protected static HttpClient client;
     protected static MoviesStore store;
     protected static Gson gson = new Gson();
+    protected static final int PORT = 8080;
 
     @BeforeAll
     static void beforeAll() {
         store = new MoviesStore();
-        server = new MoviesServer(store, 8080);
+        server = new MoviesServer(store, PORT);
         client = HttpClient.newHttpClient();
         server.start();
     }
