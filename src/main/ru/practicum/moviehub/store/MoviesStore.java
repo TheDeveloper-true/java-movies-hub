@@ -6,12 +6,12 @@ import java.util.*;
 
 public class MoviesStore {
     private final Map<Integer, Movie> storage = new HashMap<>();
-    private static int nextId = 1;
+    private static int id = 1;
 
     public void addMovie(Movie movie) {
-        Movie stored = new Movie(nextId, movie.getTitle(), movie.getDirector(), movie.getYear());
-        storage.put(nextId, stored);
-        nextId++;
+        Movie stored = new Movie(id, movie.getTitle(), movie.getDirector(), movie.getYear());
+        storage.put(stored.getId(), stored);
+        id++;
     }
 
     public void clearStorage() {
@@ -22,8 +22,8 @@ public class MoviesStore {
         return storage.values();
     }
 
-    public Movie getMovieById(int nextId) {
-        return storage.get(nextId);
+    public Movie getMovieById(int id) {
+        return storage.get(id);
     }
 
     public Collection<Movie> getMovieByYear(int year) {
@@ -35,7 +35,7 @@ public class MoviesStore {
         return movies;
     }
 
-    public boolean deleteMovieById(int nextId) {
-        return storage.remove(nextId) != null;
+    public boolean deleteMovieById(int id) {
+        return storage.remove(id) != null;
     }
 }
